@@ -2009,6 +2009,12 @@ h4 {
   }
 }
 
+@media (min-width: 1260px) {
+  .banner-bespoke {
+    padding-top: 95px;
+  }
+}
+
 /* about us footer */
 .about-footer {
   padding-top: 27px;
