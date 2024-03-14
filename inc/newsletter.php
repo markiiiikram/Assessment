@@ -1,11 +1,25 @@
-<meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style/css/application.css'>
-    <link rel="stylesheet" type="text/css" href="javascript/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="javascript/slick-1.8.1/slick/slick-theme.css">
-    <link rel="icon" href="images/logos/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+<div class="email-container ">
+    <form class="email-news container">
+        <h2 id="newsletter">Email Newsletter Sign-Up</h2>
+        <div class="news-input">
+            <div class="email-input-container">
+                <label for="your-name">Your Name</label>
+                <br>
+                <input type="text" id="your-name" name="name" autocomplete="name" class="email">
+                <br>
+            </div>
+            <div class="email-input-container">
+                <label for="your-email">Your Email</label>
+                <br>
+                <input type="text" id="your-email" name="email" autocomplete="email" class="email">
+            </div>
+    </div>
+    <br>
+        <div class="privacy-policy">
+            <div class="checkbox-container"></div>
+                <input type="checkbox" id="check">
+                <label for="check" id="label-checkmark">Please tick this box if you wish to receive marketing information from us. Please see our <a href='#'>Privacy Policy</a> for more information on how we keep your data safe.</label>
+        </div>
+        <span  id="submit" class="btn button-black subscribe" >SUBSCRIBE</span>
+    </form>
+</div>

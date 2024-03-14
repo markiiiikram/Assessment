@@ -52,8 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
 /// Burger button
 // Function to toggle the sidebar
 function toggleSidebar() {
+  // Toggle the 'active' class on #main-container, #sidebar, #hamburger, #hamburger-low
   document.querySelectorAll('#main-container, #sidebar, #hamburger, #hamburger-low').forEach(function(element) {
-    element.classList.toggle('active');
+      element.classList.toggle('active');
   });
 
   // Toggle the 'active' class on the body
@@ -61,11 +62,11 @@ function toggleSidebar() {
 
   // Check if the sidebar is active
   if (document.getElementById('sidebar').classList.contains('active')) {
-    // Prevent scrolling on the main container when sidebar is active
-    document.getElementById('main-container').addEventListener('scroll', preventScroll);
+      // Prevent scrolling on the main container when sidebar is active
+      document.getElementById('main-container').addEventListener('scroll', preventScroll);
   } else {
-    // Remove scroll prevention when sidebar is inactive
-    document.getElementById('main-container').removeEventListener('scroll', preventScroll);
+      // Remove scroll prevention when sidebar is inactive
+      document.getElementById('main-container').removeEventListener('scroll', preventScroll);
   }
 }
 
@@ -74,42 +75,29 @@ function preventScroll(event) {
   event.preventDefault();
 }
 
-// Event listener to toggle the sidebar when the burger buttons are clicked
-document.getElementById('hamburger').addEventListener('click', function(event) {
-  event.stopPropagation(); // Prevent the event from propagating to the body
-  toggleSidebar();
-});
-
-document.getElementById('hamburger-low').addEventListener('click', function(event) {
-  event.stopPropagation(); // Prevent the event from propagating to the body
-  toggleSidebar();
-});
-
-// Function to close the sidebar and remove 'active' class from other elements
-function closeSidebar() {
+// Function to remove the 'active' class from all relevant elements
+function deactivateSidebar() {
+  // Remove the 'active' class from #main-container, #sidebar, #hamburger, #hamburger-low, and the body
   document.querySelectorAll('#main-container, #sidebar, #hamburger, #hamburger-low').forEach(function(element) {
-    element.classList.remove('active');
+      element.classList.remove('active');
   });
-
-  // Remove the 'active' class from the body
   document.body.classList.remove('active');
 }
 
-// Event listener for clicks on the document body to close the sidebar
+// Event listener for clicks on the document body
 document.body.addEventListener('click', function(event) {
   // Check if the click target is outside of the sidebar
-  if (!event.target.closest('#sidebar')) {
-    // Close the sidebar and remove 'active' class from other elements
-    closeSidebar();
-    // Remove scroll prevention when sidebar is inactive
-    document.getElementById('main-container').removeEventListener('scroll', preventScroll);
+  if (!event.target.closest('#sidebar') && !event.target.closest('.hamburger')) {
+      // Deactivate the sidebar by removing the 'active' class from all relevant elements
+      deactivateSidebar();
+      // Remove scroll prevention when sidebar is inactive
+      document.getElementById('main-container').removeEventListener('scroll', preventScroll);
   }
 });
 
-// Event listener to prevent the sidebar from closing when a click occurs within the sidebar
-document.getElementById('sidebar').addEventListener('click', function(event) {
-  event.stopPropagation();
-});
+// Add event listener to both hamburger buttons
+document.getElementById("hamburger").addEventListener("click", toggleSidebar);
+document.getElementById("hamburger-low").addEventListener("click", toggleSidebar);
 
 /////////////////////////////////////
 // NAV BAR - STICKY
@@ -127,3 +115,47 @@ window.onscroll = function() {
   prevScrollPos = currentScrollPos;
 }
 
+//////////////////////////////////////////
+//Accordion
+/////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+  var accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+  // Toggle accordion dropdown when the trigger is clicked
+  accordionTriggers.forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+          // Toggle the 'active' class on the trigger
+          this.classList.toggle('active');
+      });
+  });
+});
+
+/////////////////////////////////////////
+//Validation for email input
+////////////////////////////////////////
+
+document.addEventListener('DOMContentLoaded', function() {
+  var emailInput = document.getElementById('your-email-contact');
+  var form = document.getElementById('myForm');
+
+  emailInput.addEventListener('input', function() {
+      if (!isValidEmail(emailInput.value)) {
+          emailInput.classList.add('invalid');
+      } else {
+          emailInput.classList.remove('invalid');
+      }
+  });
+
+  form.addEventListener('submit', function(event) {
+      if (!isValidEmail(emailInput.value)) {
+          emailInput.classList.add('invalid');
+          event.preventDefault();
+      }
+  });
+
+  function isValidEmail(email) {
+      // Simple email validation regex
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+  }
+});
