@@ -222,8 +222,8 @@
                 </div>
             <div class="latest-news">
                     <!-- Jamie Slater -->
-
-                <div class="article-container float-container container-col-1">
+<?php include_once 'inc/news.php'; ?>
+                <!-- <div class="article-container float-container container-col-1">
                     <a href="#">
 
                                 <img class="employees" alt="Jamie Slater" src="images/people/jamie-slater-DJvi.webp">
@@ -244,7 +244,7 @@
                         <a href='#'>NEWS</a>
                     </div>
                 </div>
-            <!-- Samantha Lupton -->
+             Samantha Lupton 
             <div class="article-container float-container container-col-2" >
                 <a href="#">
 
@@ -264,7 +264,7 @@
                         <a href='#'>NEWS</a>
                         </div>
             </div>
-                <!-- Sean Bosley -->
+                Sean Bosley
                     <div class="article-container float-container container-col-3">
                         <a href="#">
                         <div class="image-container">
@@ -285,7 +285,7 @@
                     <div class="image-container">
                         <a href='#'>NEWS</a>
                     </div>
-                    </div>
+                    </div> -->
             <h3 class="hidden view-all"><a href="#" class="view-all-2"><span>View All  &hairsp;</span><span class="icon-arrow-right3"></span></a></h3>
             </div>
         </div>

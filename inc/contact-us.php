@@ -26,47 +26,48 @@
 </div>
 
 <div class="contact-us">
+<?php
+    // Display success message if form was submitted successfully
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($nameErr) && empty($emailErr) && empty($telephoneErr) && empty($messageErr)) {
+        echo '<div class="success"><p>Your message has been sent!</p> <span class="icon-x1 close"></span></div>';
+    }
+    ?>
 <?php include_once 'validation.php'?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="news-input">
-            <div class="email-input-container">
-                <label for="your-name">Your Name</label>
-                <br>
-                <input type="text" id="your-name-contact" name="name" autocomplete="name" class="email">
-                <br>
-            </div>
-            <div class="company-container">
-                <label for="company_name">Company Name</label>
-                <br>
-                <input type="text" id="your_company_name" name="company_name"class="email">
-            </div>
-            <div class="email-input-container">
-                <label for="your-email">Your Email</label>
-                <br>
-                <input type="text" id="your-email-contact" name="email" class="email">
-            </div>
-            <div class="email-input-container">
-                <label for="your-email">Your Telephone Number</label>
-                <br>
-                <input type="text" id="your-telephone" name="telephone" class="email">
-            </div>
+<form id="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <div class="news-input">
+        <div class="email-input-container">
+            <label for="your-name">Your Name</label><br>
+            <input type="text" id="your-name-contact" name="name" autocomplete="name" class="email"><br>
+        </div>
+        <div class="company-container">
+            <label for="company_name">Company Name</label><br>
+            <input type="text" id="your_company_name" name="company_name" class="email">
+        </div>
+        <div class="email-input-container">
+            <label for="your-email">Your Email</label><br>
+            <input type="text" id="your-email-contact" name="email" class="email">
+        </div>
+        <div class="email-input-container">
+            <label for="your-email">Your Telephone Number</label><br>
+            <input type="text" id="your-telephone" name="telephone" class="email">
+        </div>
         <div class="email-input-container input-message-container">
-            <label for="message-container">Message</label>
-            <textarea rows="4" name="message" placeholder="Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?" id="message-container" > </textarea>
+            <label for="message-container">Message</label><br>
+            <textarea rows="4" name="message" placeholder="Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?" id="message-container"></textarea>
         </div>
-        </div>
-    <br>
-        <div class="privacy-policy">
-            <div class="checkbox-container-1"></div>
-                <input type="checkbox" id="check-sup">
-                <label for="check-sup" id="label-checkmark">Please tick this box if you wish to receive marketing information from us. Please see our <a href='#'>Privacy Policy</a> for more information on how we keep your data safe.</label>
-        </div>
-        <div class="recaptcha"><span>This site is protected by reCAPTCHA and the Google <a href="#" target="_blank">
-            <u>Privacy Policy</u></a> and <a href="#" target="_blank"><u>Terms of Service</u></a> apply.</span></div>
-        <div class="button-block">
-            <button  id="submit" class="btn button-black enquiry" >SEND ENQUIRY</button>
-            <small class="">Fields Required</small>
-
     </div>
-    </form>
+    <br>
+    <div class="privacy-policy">
+        <div class="checkbox-container-1"></div>
+        <input type="checkbox" id="check-sup">
+        <label for="check-sup" id="label-checkmark">Please tick this box if you wish to receive marketing information from us. Please see our <a href='#'>Privacy Policy</a> for more information on how we keep your data safe.</label>
+    </div>
+    <div class="recaptcha">
+        <span>This site is protected by reCAPTCHA and the Google <a href="#" target="_blank"><u>Privacy Policy</u></a> and <a href="#" target="_blank"><u>Terms of Service</u></a> apply.</span>
+    </div>
+    <div class="button-block">
+        <button id="submit1" class="btn button-black enquiry">SEND ENQUIRY</button>
+        <small class="">Fields Required</small>
+    </div>
+</form>
 </div>

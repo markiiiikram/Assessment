@@ -13,31 +13,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company_name = test_input($_POST["company_name"]); // Sanitize company name
     $message = test_input($_POST["message"]);
     $telephone = test_input($_POST["telephone"]);
-    
+
     // Validate name
     if (empty($name)) {
         $nameErr = "Name is required";
     }
-    
+
     // Validate email
     if (empty($email)) {
         $emailErr = "Email is required";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailErr = "Invalid email format";
     }
-    
+
     // Validate telephone
     if (empty($telephone)) {
         $telephoneErr = "Telephone number is required";
     } elseif (!preg_match("/^\d+$/", $telephone)) {
         $telephoneErr = "The telephone format is incorrect.";
     }
-    
+
     // Validate message
     if (strlen($message) < 5) {
         $messageErr = "The message must be at least 5 characters long";
     }
-    
+
     // Database insertion
     try {
         $servername = "localhost";
@@ -58,20 +58,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
+
+        // Redirect to success page with success message in URL parameters
+        header("Location: success.php?success=1");
+        exit(); // Ensure that script execution stops after redirection
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
-}
-
-$errorMessages = array_filter([$nameErr, $emailErr, $telephoneErr, $messageErr]);
-if (!empty($errorMessages)) {
-    echo '<div class ="errors">';
-    foreach ($errorMessages as $errorMessage) {
-        echo "<div class=\"error\"><p>$errorMessage</p> <span class=\"icon-x1\"></span></div>";
-
-
-    }
-    echo '</div>';
 }
 
 // Function to sanitize input
@@ -79,5 +72,7 @@ function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
+    $data = preg_replace('/[^A-Za-z0-9\-]/', '', $data);
     return $data;
 }
+?>
