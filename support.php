@@ -132,7 +132,7 @@
         </div>
     </div>
     <div class="bottom-section">
-    <?php include_once './inc/contact-us.php'?>
+    <?php include 'inc/contact-us.php'?>
     </div>
 
 </div>

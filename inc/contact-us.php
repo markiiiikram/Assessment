@@ -3,7 +3,9 @@
         <p><strong> Email us on: </strong><br></p>
         <p class="tele"><a href="#">sales@netmatters.com</a></p>
         <p><strong> Business hours:</strong></p>
-        <p><strong> Monday - Friday 07:00 - 18:00 </strong></p>
+        <p><strong> Monday - Friday 07:00 - 18:00 
+        <span class="chevron-thin-down">
+        </strong></p>
     </div>
     <div class="">
         <div class="accordion-bottom out-of-hours">
@@ -23,10 +25,9 @@
     </div>
 </div>
 
-
-
 <div class="contact-us">
-    <form >
+<?php include_once 'validation.php'?>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="news-input">
             <div class="email-input-container">
                 <label for="your-name">Your Name</label>
@@ -35,23 +36,23 @@
                 <br>
             </div>
             <div class="company-container">
-                <label for="company-name">Company Name</label>
+                <label for="company_name">Company Name</label>
                 <br>
-                <input type="text" id="company-name" name="company" class="email">
+                <input type="text" id="your_company_name" name="company_name"class="email">
             </div>
             <div class="email-input-container">
                 <label for="your-email">Your Email</label>
                 <br>
-                <input type="text" id="your-email-contact" name="email" autocomplete="email" class="email">
+                <input type="text" id="your-email-contact" name="email" class="email">
             </div>
             <div class="email-input-container">
                 <label for="your-email">Your Telephone Number</label>
                 <br>
-                <input type="text" id="your-email" name="email" autocomplete="email" class="email">
+                <input type="text" id="your-telephone" name="telephone" class="email">
             </div>
         <div class="email-input-container input-message-container">
             <label for="message-container">Message</label>
-            <textarea rows="4" placeholder="Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?" id="message-container" > </textarea>
+            <textarea rows="4" name="message" placeholder="Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?" id="message-container" > </textarea>
         </div>
         </div>
     <br>
