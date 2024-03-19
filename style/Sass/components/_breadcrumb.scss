@@ -1,0 +1,16 @@
+.breadcrumbs {
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+  padding: 14px 0 13px;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    font-size: 0.8125rem;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    font-weight: 700;
+    color: $tuna;
+  }
+}
