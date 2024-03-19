@@ -1,19 +1,6 @@
 <?php
 // Step 1: Establish a database connection
-$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "contact_form_nm";
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include("dbCon.php");
 
 // Step 2: Execute a query
 $sql = "SELECT n.title, n.minute_read, n.content, n.posted_by_image, n.posted_by_image_alt, n.posted_by, n.date, n.image, n.image_alt, c.color

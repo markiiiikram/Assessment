@@ -188,9 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event listener for input change
   form.addEventListener("input", function (event) {
     var input = event.target;
-    if (
-      input.matches("#your-name-contact, #your-telephone, #message-container")
-    ) {
+    if (input.matches("#your-name-contact, #message-container")) {
       if (input.value.trim() === "") {
         input.classList.add("invalid");
       } else {
@@ -203,6 +201,13 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         emailInput.classList.remove("invalid");
       }
+    } else if (input.id === "your-telephone") {
+      // Check if the input is the telephone field
+      if (!isValidTelephone(input.value)) {
+        input.classList.add("invalid");
+      } else {
+        input.classList.remove("invalid");
+      }
     }
   });
 
@@ -210,7 +215,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
+
+  function isValidTelephone(telephone) {
+    var telephoneRegex = /^[#\d-]*$/; // Regex to allow only digits, #, and -
+    return telephoneRegex.test(telephone);
+  }
 });
+
 ////////////////////////////////////
 //////////// Close button
 ///////////////////////////////////
@@ -228,3 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+////////////////////////////////////
+//// Form Autoscroll
+////////////////////////////////////

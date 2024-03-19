@@ -5,6 +5,7 @@
 
 $name = $email = $telephone = $company_name = $message = "";
 $nameErr = $emailErr = $telephoneErr = $company_nameErr = $messageErr = "";
+$successMessage = ""; // Initialize success message variable
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize input
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate email
     if (empty($email)) {
         $emailErr = "Email is required";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } elseif (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
         $emailErr = "Invalid email format";
     }
 
@@ -38,41 +39,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $messageErr = "The message must be at least 5 characters long";
     }
 
-    // Database insertion
-    try {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "contact_form_nm";
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Proceed with database insertion if there are no errors
+    if (empty($nameErr) && empty($emailErr) && empty($telephoneErr) && empty($messageErr)) {
+        try {
+            include "dbCon.php";
 
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        $sql = "INSERT INTO contactus (name, company_name, email, telephone, message) VALUES (?, ?, ?, ?, ?)";
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            throw new Exception(mysqli_error($conn));
-        }
-        mysqli_stmt_bind_param($stmt, "sssss", $name, $company_name, $email, $telephone, $message);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);
+            $sql = "INSERT INTO contactus (name, company_name, email, telephone, message) VALUES (?, ?, ?, ?, ?)";
+            $stmt = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                throw new Exception(mysqli_error($conn));
+            }
+            mysqli_stmt_bind_param($stmt, "sssss", $name, $company_name, $email, $telephone, $message);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+            mysqli_close($conn);
 
-        // Redirect to success page with success message in URL parameters
-        header("Location: success.php?success=1");
-        exit(); // Ensure that script execution stops after redirection
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+            $successMessage = "Your Enquiry has been submitted.";
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
     }
 }
 
 // Function to sanitize input
-function test_input($data) {
+function test_input($data, $excludeEmail = false) {
     $data = trim($data);
     $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    $data = preg_replace('/[^A-Za-z0-9\-]/', '', $data);
+    if (!$excludeEmail) {
+        $data = preg_replace('/[^A-Za-z0-9\-@._+%]/', '', $data);
+    }
+    return $data;
+}
+function specialCharsEncode($data) {
+    $data = htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, 'UTF-8', false);
     return $data;
 }
 ?>
