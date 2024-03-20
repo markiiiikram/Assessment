@@ -11,7 +11,6 @@
 <?php include_once './inc/cookie.php' ?>
 <?php include_once './inc/header.php' ?>
 <?php include_once './inc/nav-bar.php' ?>
-    
 <div class="breadcrumbs">
     <div class="container">
             <ul>
