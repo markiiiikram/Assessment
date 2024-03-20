@@ -63,7 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function test_input($data, $excludeEmail = false) {
     $data = stripslashes($data);
     if (!$excludeEmail) {
-        $data = preg_replace('/[^A-Za-z0-9\-@._+%]/', ' ', $data);
+       $data = preg_replace('/[^A-Za-z0-9\-@._+%]/', ' ', $data);
+
     } else {
         $data = preg_replace('/[^A-Za-z0-9\-@.+_]/', '', $data);
     }
