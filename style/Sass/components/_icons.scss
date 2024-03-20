@@ -2,19 +2,20 @@
 // ICON IMPORTS
 // ==========================================================================
 @font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?pr74gk');
-  src:  url('../fonts/icomoon.eot?pr74gk#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?pr74gk') format('truetype'),
-    url('../fonts/icomoon.woff?pr74gk') format('woff'),
-    url('../fonts/icomoon.svg?pr74gk#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?azao5s");
+  src: url("../fonts/icomoon.eot?azao5s#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?azao5s") format("truetype"),
+    url("../fonts/icomoon.woff?azao5s") format("woff"),
+    url("../fonts/icomoon.svg?azao5s#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -39,7 +40,7 @@
 }
 .icon-code-1:before {
   content: "\e91e";
-  margin-left:25px;
+  margin-left: 25px;
 }
 .icon-question-mark:before {
   content: "\e91d";
@@ -53,7 +54,18 @@
 .icon-chevrons-right:before {
   content: "\e924";
   padding-right: 15px !important;
-  font-size: .875rem !important;
+  font-size: 0.875rem !important;
+}
+.icon-chevron-thin-down:before {
+  content: "\e925";
+  font-weight: bolder;
+}
+.icon-x:before {
+  content: "\e926";
+}
+.icon-x1:before {
+  content: "\e927";
+  font-size: 11px;
 }
 .icon-transfer:before {
   content: "\e905";
@@ -105,11 +117,6 @@
 }
 .icon-checkmark:before {
   content: "\ea10";
-  // color: $white;
-  // display: none;
-  // font-size: 18px;
-  // padding-left: 6px;
-  // padding-top: 8px;
 }
 .icon-shuffle:before {
   content: "\ea30";
@@ -120,8 +127,8 @@
 .icon-arrow-right2:before {
   content: "\ea3c";
 }
-.icon-arrow-right2{
-  border:0;
+.icon-arrow-right2 {
+  border: 0;
   margin-left: 12px;
 }
 .icon-arrow-right3:before {
@@ -199,7 +206,7 @@
   content: "\e986";
   color: #fff;
 }
-.icon-search-h:before{
+.icon-search-h:before {
   content: "\e986";
 }
 .icon-star:before {
@@ -243,170 +250,162 @@
 // ==========================================================================
 // Images
 
-
 // Base Icons
-.icon-ours{
-  display:inline-block;
-  color:#fff;
+.icon-ours {
+  display: inline-block;
+  color: #fff;
   font-size: 32px;
-  padding:15px;
-  border-radius:50%;
-  margin:0px auto 17px;
+  padding: 15px;
+  border-radius: 50%;
+  margin: 0px auto 17px;
 }
-.icon-laptop{
-  background-color:$hoki;
+.icon-laptop {
+  background-color: $hoki;
 }
 
-.icon-display{
-  background-color:$blue;
+.icon-display {
+  background-color: $blue;
 }
-.icon-bar-graph{
-  background-color:$green-button; 
+.icon-bar-graph {
+  background-color: $green-button;
 }
-.icon-phone_in_talk{
+.icon-phone_in_talk {
   background-color: $valencia;
 }
 
-
-.icon-code{
+.icon-code {
   background-color: $purple;
 }
 
-.icon-security{
+.icon-security {
   background-color: $radical-red;
 }
 
-.icon-scholar{
+.icon-scholar {
   background-color: $red;
 }
 
-.stars{
-  display:flex;
-  flex-direction:row;
-  gap:5px;
+.stars {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
-.icon-search{
+.icon-search {
   font-size: 24px;
   font-weight: 400;
   color: #333645;
   background-color: transparent;
-  position:relative;
-  top:10px;
-  right:10px;
-
+  position: relative;
+  top: 10px;
+  right: 10px;
 }
 ///////////////////////////////////////////////////////////////////////
 //HEADER ICONS
 ///////////////////////////////////////////////////////////////////////
 
-
-
-
 //Nav-bar
 .icon-laptop-h:before {
   content: "\e904";
-  color:$hoki;
+  color: $hoki;
 }
 .icon-display-h:before {
   content: "\e956";
-  color:$blue;
+  color: $blue;
 }
 .icon-bar-graph-h:before {
   content: "\e902";
-  color:$green;
+  color: $green;
 }
-.icon-phone-h:before{
+.icon-phone-h:before {
   content: "\e901";
-  color:$valencia
+  color: $valencia;
 }
 .icon-code-h:before {
   content: "\e91e";
-  color:$purple;
+  color: $purple;
 }
 .icon-code-b:before {
   content: "\e91e";
-  color:$white;
+  color: $white;
 }
 .icon-security-h:before {
   content: "\e900";
-  color:$radical-red;
+  color: $radical-red;
 }
 .icon-scholar-h:before {
   content: "\e903";
-  color:$red;
+  color: $red;
 }
 
 .nav:hover > [class^="icon-"] {
   color: $white;
 }
 
-
-
-
 .icon-hamburger:before {
   content: "\e913";
-
 }
 // FOOTER ICONS
 
+.min-logo {
+  border-radius: 50%;
+}
 
-.min-logo{
-  border-radius:50%;
-  }
-
-
-  .nm-logo-med{
-width:250px;
-position:relative;
-top:1px;
-left:1px;
-  } 
-@media (min-width:480px){
-  .nm-logo-med{width:320px;
+.nm-logo-med {
+  width: 250px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+@media (min-width: 480px) {
+  .nm-logo-med {
+    width: 320px;
   }
   .icon {
-    margin-right:10px;
+    margin-right: 10px;
     margin-bottom: 10px;
   }
 }
 
-.nm-logo-black{
+.nm-logo-black {
   max-width: 100%;
   display: block;
   padding-left: 0px;
   padding-right: 0px;
-  margin-right:auto;
-}  
+  margin-right: auto;
+}
 
-.color-logo, .mono-logo{
-  max-height:70px;
-} 
-.princess{
+.color-logo,
+.mono-logo {
+  max-height: 70px;
+}
+.princess {
   padding-top: 15px;
 }
- 
+
 // @media (max-width:375px){
 //   .nm-logo-black{
 //     max-width:200px;
 //   }
 // }
-@media (min-width:768px){
-  .telephone{display:none}
-  .nm-logo-black{
+@media (min-width: 768px) {
+  .telephone {
+    display: none;
+  }
+  .nm-logo-black {
     max-width: 345px;
   }
 }
-@media (min-width:992px){
-  .nm-logo-black{
-  position: relative;
-  left: 0;
+@media (min-width: 992px) {
+  .nm-logo-black {
+    position: relative;
+    left: 0;
   }
 }
-  @media (max-width:1259px){
-    icon{
+@media (max-width: 1259px) {
+  icon {
     padding: 12px 22px 16px;
     margin-right: 10px;
     margin-bottom: 10px;
-}
   }
+}

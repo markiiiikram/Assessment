@@ -47,43 +47,28 @@
 .sidebar-inner > div{
         padding-top:20px;
 }
-// .sidebar-inner > [class^="sidebar"] > a , .sidebar-contact, .sidebar-left-align [class^="sidebar"] > a{ 
-//     &:hover {
-//       background-color: hsla(0, 0%, 100%, .05);
-//     }
-//   }
-// .sidebar-our-work:hover > :first-child {
-//             background-color: rgba(255, 255, 255, 0.05);   
-// }
-// .sidebar-services:hover > :first-child{
-//     background-color: rgba(255, 255, 255, 0.05);   
-// }
-// .sidebar-our-knowledge> :first-child{
-//     background-color: rgba(255, 255, 255, 0.05);  
-// }
-// .sidebar-training> :first-child{
-//     background-color: rgba(255, 255, 255, 0.05);  
-// }
-// .sidebar-our-company> :first-child{
-//     background-color: rgba(255, 255, 255, 0.05);  
-// }
-// .sidebar-contact-bottom> :first-child{
-//     background-color: rgba(255, 255, 255, 0.05);  
-// }
 
+.sidebar-covid, .sidebar-support{
+    cursor: pointer;
+}
 @mixin sidebar-left-align-hover-highlight {
-    .sidebar-left-align &:hover > :first-child {
+    .sidebar-left-align &:hover > :first-child, 
+    .sidebar-inner > &:hover > :first-child {
         background-color: rgba(255, 255, 255, 0.05);
     }
 }
-
+.sidebar-contact:hover{
+    background-color: rgba(255, 255, 255, 0.05);
+}
 // Apply the common styles to each sidebar
 .sidebar-our-work, 
 .sidebar-services, 
 .sidebar-our-knowledge, 
 .sidebar-training, 
 .sidebar-our-company, 
-.sidebar-contact-bottom {
+.sidebar-contact-bottom,
+.hidden-list
+{
     @include sidebar-left-align-hover-highlight;
 }
   // Border + background for the main containers in nav

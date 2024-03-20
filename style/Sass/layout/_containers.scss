@@ -8,7 +8,7 @@
     top:0;
     transition:.5s;
   }
-.align-center{
+.container{
   margin-left:auto;
   margin-right:auto;
   padding-left: 15px;
@@ -412,7 +412,7 @@ display:none;
     margin-top:0px;
   }
 
-      .align-center{
+      .container{
       width:750px;
     }
     .hidden-m{
@@ -490,7 +490,7 @@ display:none;
     width:455px;
     height:263px;
   }
-    .align-center{
+    .container{
       width:970px;
     }
   .lg-device{
@@ -548,7 +548,7 @@ display:none;
     width:370px;
     height:213px;
   }
-  .align-center{
+  .container{
     width:1200px;
   }
   .xl-device{
