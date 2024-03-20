@@ -1,146 +1,146 @@
 // ==========================================================================
 // BUTTONS
 // ==========================================================================
-.btn{
-    cursor: pointer;
-    text-align: center;
-    color:#fff;
-    height: auto;
-    line-height: 35px;
-    padding: 5px 15px;
-    text-transform: uppercase;
-    font-size: 1rem;
-    border-radius: 3px;
-    white-space: normal;
-    width:130px;
-  }
-  .btn-art{
-    height:46px;
-    display:block;
-    box-sizing:border-box;
-    font-size: 1.063rem;
-    @include center;
-  }
-  .btn-banner{
-    height:50px;
-    padding:5px 20px;
-    border-radius:3px;
-    background-color: $purple;
-    line-height: 50px;
-    font-size:1.2rem;
-    width:181px;
-    margin-left:auto;
-    margin-right:auto;
-    text-transform: uppercase;
-    & span{
-      margin-left:12px;
-    }
-  }
- .btn-banner-bespoke{
-  width:214px;
- }
-  .btn-banner:after
-  [class^="icon-"]{
-    border:1px solid transparent;
-  }
-  .btn-banner:hover{
-    background-color:$purple-hover;
-    color:$white;
-  }
-  .button-green {
-    @include button($green-button, $green-button-hover);
-  }
-  .button-green-dark {
-    @include button($green, $green-button-hover);
-  }
-  
-  .button-blue {
-    @include button($blue, $blue-hover);
-  }
-  
-  .article-details .button-blue:hover {
-    background-color: $blue; 
-  }
-  .article-details .button-red:hover {
-    background-color: $red; 
-  }
-  .button-hoki {
-    @include button($hoki, $hoki-hover);
-  }
-  
-  .button-purple {
-    @include button($purple, $purple-hover);
-  }
-  
-  .button-red {
-    @include button($red, $red-hover);
-  }
-  
-  .button-radicalred {
-    @include button($radical-red, $radical-red-hover);
-  }
-  
-  .button-valencia {
-    @include button($valencia, $valencia-hover);
-  }
-  
-  .button-black {
-    background-color: $tuna;
-    transition: 0.3s;
-    &:hover {
-      background-color: $black-hover !important;
-      color: #fff !important;
-    }
-  }
- 
-  .button-grey {
-    @include button($manatee, $waterloo);
-  }
-  
-  .button-punch {
-    background-color: #CE4125;
-  }
-
-  
-  #label-checkmark{
-    cursor:pointer;
-  }
-
-.telephone{
-  background-color:transparent;
-  border:0px;
-}
-.button-h{
-display:inline-block;
-height:46px;
-padding:5px 15px;
-border:1px;
-border-radius:3px;
-font-size: 1.125rem;
-text-transform: uppercase;
-line-height:46px;
+.btn {
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  height: auto;
+  line-height: 35px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-radius: 3px;
+  white-space: normal;
+  width: 130px;
 }
 
-  .button-header-text{
-  font-family:Poppins, sans-serif;
-  text-transform:uppercase;
-  font-size:1.125rem;
-  line-height:46px;
-  color:$white;
+.btn-art {
+  height: 46px;
+  display: block;
+  box-sizing: border-box;
+  font-size: 1.063rem;
+  @include center;
 }
-.button-h{
+.btn-banner {
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 3px;
+  background-color: $purple;
+  line-height: 50px;
+  font-size: 1.2rem;
+  width: 181px;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  & span {
+    margin-left: 12px;
+  }
+}
+.btn-banner-bespoke {
+  width: 214px;
+}
+.btn-banner:after [class^="icon-"] {
+  border: 1px solid transparent;
+}
+.btn-banner:hover {
+  background-color: $purple-hover;
+  color: $white;
+}
+.button-green {
+  @include button($green-button, $green-button-hover);
+}
+.button-green-dark {
+  @include button($green, $green-button-hover);
+}
+
+.button-blue {
+  @include button($blue, $blue-hover);
+}
+
+.article-details .button-blue:hover {
+  background-color: $blue;
+}
+.article-details .button-red:hover {
+  background-color: $red;
+}
+.button-hoki {
+  @include button($hoki, $hoki-hover);
+}
+
+.button-purple {
+  @include button($purple, $purple-hover);
+}
+
+.button-red {
+  @include button($red, $red-hover);
+}
+
+.button-radicalred {
+  @include button($radical-red, $radical-red-hover);
+}
+
+.button-valencia {
+  @include button($valencia, $valencia-hover);
+}
+
+.button-black {
+  background-color: $tuna;
+  transition: 0.3s;
+  &:hover {
+    background-color: $black-hover !important;
+    color: #fff !important;
+  }
+}
+
+.button-grey {
+  @include button($manatee, $waterloo);
+}
+
+.button-punch {
+  background-color: #ce4125;
+}
+
+#label-checkmark {
+  cursor: pointer;
+}
+
+.telephone {
+  background-color: transparent;
+  border: 0px;
+}
+.button-h {
+  display: inline-block;
+  height: 46px;
+  padding: 5px 15px;
+  border: 1px;
+  border-radius: 3px;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  line-height: 46px;
+}
+
+.button-header-text {
+  font-family: Poppins, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  line-height: 46px;
+  color: $white;
+}
+.button-h {
   [class^="icon-"]::before {
-    color:$white;
+    color: $white;
     margin-right: 5px;
-  font-size: 23px;
-  float: left;
-  line-height: 43px;
+    font-size: 23px;
+    float: left;
+    line-height: 43px;
   }
 }
-.support, .contact{
-  display:none;
+.support,
+.contact {
+  display: none;
 }
-.hamburger{
+.hamburger {
   position: relative;
   font-size: 35px;
   width: 63px;
@@ -148,63 +148,65 @@ line-height:46px;
   background-color: $tuna;
   border: none;
   border-radius: 3px;
-  color:#fff;
-  line-height:60px;
+  color: #fff;
+  line-height: 60px;
 }
-.hamburger, .search-submit, .btn-banner{
-  display:block;
+.hamburger,
+.search-submit,
+.btn-banner {
+  display: block;
 }
-.hamburger:hover{
-  background-color:$black-hover;
+.hamburger:hover {
+  background-color: $black-hover;
 }
-@media (max-width:562px){
-  .btn-banner{
-    margin-top:0px;
+@media (max-width: 562px) {
+  .btn-banner {
+    margin-top: 0px;
   }
-  .banner-text{
-    margin-top:0px;
+  .banner-text {
+    margin-top: 0px;
   }
-  .banner-heading{
-    margin-bottom:0px;
-  }
-}
-@media (min-width:563px){
-  .btn-banner{
-    margin-top:30px;
+  .banner-heading {
+    margin-bottom: 0px;
   }
 }
-@media (min-width:992px)
-{
+@media (min-width: 563px) {
+  .btn-banner {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .support,
+  .contact {
+    display: inline-block;
+    color: $white;
+  }
+  .support {
+    background-color: $blue;
+    margin-right: 15px;
+  }
+  .right-align {
+    margin-left: auto;
+  }
+  .support:hover {
+    background-color: $blue-hover;
+  }
+  .search-submit {
+    margin-left: 0px !important;
+  }
+  .search-submit:hover,
+  .contact:hover {
+    background-color: $waterloo;
+  }
+  .contact {
+    background-color: $manatee;
+  }
 
-.support, .contact{
-  display:inline-block;
-  color:$white;
-}
-.support{
-  background-color: $blue;
-  margin-right:15px;
-}
-.right-align{
-  margin-left:auto;
-}
-.support:hover{
-  background-color: $blue-hover;
-}
-.search-submit{
-  margin-left:0px !important;
-}
-.search-submit:hover, .contact:hover{
-  background-color: $waterloo;
-}
-.contact{
-background-color: $manatee;
-}
-
-.btn-banner{
-  align-self:start;
-  margin-left:0px;
-  margin-right:0px;
-  margin-top:30px;
-  margin-bottom:18px;
-}
+  .btn-banner {
+    align-self: start;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 30px;
+    margin-bottom: 18px;
+  }
 }
