@@ -52,19 +52,19 @@
 <form id="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <div class="news-input">
     <div class="email-input-container">
-                <label for="your-name">Your Name</label><br>
+                <label for="your-name-contact">Your Name</label><br>
                 <input type="text" id="your-name-contact" name="name" autocomplete="name" class="email" value="<?php echo htmlspecialchars($name); ?>"><br>
             </div>
             <div class="company-container">
-                <label for="company_name">Company Name</label><br>
+                <label for="your_company_name">Company Name</label><br>
                 <input type="text" id="your_company_name" name="company_name" autocomplete="company" class="email" value="<?php echo htmlspecialchars($company_name); ?>">
             </div>
             <div class="email-input-container">
-                <label for="your-email">Your Email</label><br>
+                <label for="your-email-contact">Your Email</label><br>
                 <input type="text" id="your-email-contact" name="email" class="email" value="<?php echo $email; ?>">
             </div>
             <div class="email-input-container">
-                <label for="your-email">Your Telephone Number</label><br>
+                <label for="your-telephone">Your Telephone Number</label><br>
                 <input type="text" id="your-telephone" name="telephone" class="email" value="<?php echo htmlspecialchars($telephone); ?>">
             </div>
             <div class="email-input-container input-message-container">
@@ -82,7 +82,7 @@
         <span>This site is protected by reCAPTCHA and the Google <a href="#" target="_blank"><u>Privacy Policy</u></a> and <a href="#" target="_blank"><u>Terms of Service</u></a> apply.</span>
     </div>
     <div class="button-block">
-        <button id="submit1" class="btn button-black enquiry">SEND ENQUIRY</button>
+        <button id="submit1" class="btn button-black enquiry" action="#contact-form">SEND ENQUIRY</button>
         <small class="required">Fields Required</small>
     </div>
 </form>
