@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Function to sanitize input
+// Function to sanitise input
 function test_input($data, $excludeEmail = false) {
     $data = stripslashes($data);
     if (!$excludeEmail) {
