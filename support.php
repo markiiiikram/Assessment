@@ -22,7 +22,7 @@
 </div>
     <div class="h1-container">
         <div class="container">
-         <h1 class="h1-office">Our Offices</h1>
+        <h1 class="h1-office">Our Offices</h1>
         </div>
     </div>
     <div class="middle container">
