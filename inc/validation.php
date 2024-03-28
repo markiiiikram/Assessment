@@ -53,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_close($stmt);
             mysqli_close($conn);
             $successMessage = "Your Enquiry has been submitted.";
+            
+            $name = $surname = $email = $subject = $message = "";
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }

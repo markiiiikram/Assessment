@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="contact-us">
+<div class="contact-us" id=>
 <?php include_once 'validation.php'?>
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <?php if (empty($nameErr) && empty($emailErr) && empty($telephoneErr) && empty($messageErr)): ?>
@@ -49,7 +49,7 @@
             </div>
         <?php endif; ?>
     <?php endif; ?>
-<form id="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<form id="myForm" action="#<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <div class="news-input">
     <div class="email-input-container">
                 <label for="your-name-contact">Your Name</label><br>
