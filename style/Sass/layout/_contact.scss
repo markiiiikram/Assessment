@@ -78,6 +78,8 @@
   textarea {
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid $grey;
+    border-radius: 2px;
   }
   textarea:focus {
     border-color: #5bc0de;

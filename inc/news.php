@@ -6,6 +6,7 @@ include("dbCon.php");
 $sql = "SELECT n.title, n.minute_read, n.content, n.posted_by_image, n.posted_by_image_alt, n.posted_by, n.date, n.image, n.image_alt, c.color
         FROM news AS n
         JOIN color AS c ON n.color_ID = c.color_ID
+        ORDER BY STR_TO_DATE(date, '%D %M %Y') DESC
         LIMIT 3;";
 
 $result = $conn->query($sql);
